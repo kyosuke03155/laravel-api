@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# すべてのコンテナをバックグラウンドで起動
+docker compose up -d
+
 # Composerによる依存関係のインストール
 docker compose run --rm app composer install
 
@@ -23,6 +26,3 @@ docker compose run --rm app php artisan config:clear
 docker compose run --rm app php artisan cache:clear
 docker compose run --rm app php artisan route:clear
 docker compose run --rm app php artisan view:clear
-
-# コンテナの起動
-docker compose up -d
